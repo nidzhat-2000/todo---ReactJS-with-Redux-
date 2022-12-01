@@ -20,6 +20,7 @@ export const addSlc = createSlice({
   },
 });
 
+// Action creators are generated for each case reducer function
 export const { addItem, deleteItem } = addSlc.actions;
 
 export default addSlc.reducer;

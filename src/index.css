@@ -45,6 +45,24 @@ button {
   justify-content: space-between;
 }
 
-button:disabled {
+/* button:disabled {
   display: none;
+} */
+
+.logout-btn {
+  display: none;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  width: 340px;
+}
+
+.icon {
+  border: none;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: aqua;
 }

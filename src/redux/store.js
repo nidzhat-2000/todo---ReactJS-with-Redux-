@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import addSlc from './addSlc';
-import userSlc from './userSlc';
+import addSlc from './slices/addSlc';
+import userSlc from './slices/userSlc';
 
 export const store = configureStore({
   reducer: { addingItem: addSlc, userSlc },

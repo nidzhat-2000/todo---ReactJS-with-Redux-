@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { logIn, logOut } from '../redux/userSlc';
+import { logIn, logOut } from '../redux/slices/userSlc';
 
 function Header() {
   const { user } = useSelector(state => state.userSlc);
-  console.log(user);
+  // console.log(user);
   const dispatch = useDispatch();
 
   return (
@@ -28,13 +28,7 @@ function Header() {
         </button>
       </section>
 
-      {/* {user && ( */}
-      <div className="logout">
-        <button disabled={!user} onClick={() => dispatch(logOut())}>
-          Log out
-        </button>
-      </div>
-      {/* )} */}
+      {user && <h3>Welcome, {user.name}</h3>}
     </div>
   );
 }
