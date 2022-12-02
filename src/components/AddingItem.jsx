@@ -7,15 +7,11 @@ import { nanoid } from 'nanoid';
 function AddingItem() {
   const { items } = useSelector(state => state.addingItem);
   const { user } = useSelector(state => state.userSlc);
-  // console.log(user);
-  // console.log(items);
+  const id = nanoid();
+
   const dispatch = useDispatch();
 
-  const id = nanoid();
-  // console.log(id);
-
   const [todo, setTodo] = useState('');
-  // console.log(todo);
 
   const submitHandle = e => {
     e.preventDefault();
@@ -34,12 +30,14 @@ function AddingItem() {
     <form onSubmit={submitHandle} className="form">
       <div className="form-comps">
         <input
+        className='add-item'
+        placeholder='Type here...'
           type="text"
           onChange={e => {
             setTodo(e.target.value);
           }}
         />
-        <button disabled={!user} type="submit">
+        <button disabled={!user} type="submit" className='add-btn'>
           Add
         </button>
       </div>
