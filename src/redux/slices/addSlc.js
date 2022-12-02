@@ -10,6 +10,7 @@ export const addSlc = createSlice({
   reducers: {
     addItem: (state, action) => {
       state.items = [action.payload, ...state.items];
+      localStorage.setItem('items', action.payload);
     },
     deleteItem: (state, action) => {
       state.items = state.items.filter(item => item.id !== action.payload);

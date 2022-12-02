@@ -32,7 +32,7 @@ function EditItem({ closePopup, data }) {
           type="text"
           value={title}
           onChange={e => setTitle(e.target.value)}
-        />{' '}
+        />
         <br />
         <label htmlFor="" className={done ? 'checked' : ''}>
           <input
@@ -41,7 +41,7 @@ function EditItem({ closePopup, data }) {
             onChange={e => setDone(e.target.checked)}
           />
           Done
-        </label>{' '}
+        </label>
         <br />
         <button type="submit">💹 Edit</button>
         <br />

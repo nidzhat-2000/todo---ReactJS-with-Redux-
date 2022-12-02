@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-
+import React, { useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addItem, deleteItem } from '../redux/slices/addSlc';
+import { addItem } from '../redux/slices/addSlc';
 import { nanoid } from 'nanoid';
 
 function AddingItem() {
-  const { items } = useSelector(state => state.addingItem);
   const { user } = useSelector(state => state.userSlc);
   const id = nanoid();
+
+  const focus = useRef();
 
   const dispatch = useDispatch();
 
@@ -15,7 +15,6 @@ function AddingItem() {
 
   const submitHandle = e => {
     e.preventDefault();
-
     dispatch(
       addItem({
         name: user.name,
@@ -24,20 +23,28 @@ function AddingItem() {
         done: false,
       })
     );
+    e.target.reset();
+    focus.current.focus();
   };
 
   return (
     <form onSubmit={submitHandle} className="form">
       <div className="form-comps">
         <input
-        className='add-item'
-        placeholder='Type here...'
+          className="add-item"
+          ref={focus}
+          placeholder="Type here..."
           type="text"
           onChange={e => {
+            console.log(e.target.value);
             setTodo(e.target.value);
           }}
         />
-        <button disabled={!user} type="submit" className='add-btn'>
+        <button
+          disabled={!user}
+          type="submit"
+          className={!user ? 'disabled-add-btn' : 'add-btn'}
+        >
           Add
         </button>
       </div>

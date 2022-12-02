@@ -35,13 +35,6 @@ button {
 }
 
 .logout {
-  margin-left: auto;
-  background-color: rgb(236, 104, 104);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 30px;
-  font-size: 15px;
-  letter-spacing: 1.5px;
 }
 
 .form {
@@ -62,6 +55,16 @@ button {
 } */
 
 .logout-btn {
+  margin-left: auto;
+  background-color: rgb(236, 104, 104);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+.hide {
   display: none;
 }
 
@@ -141,9 +144,18 @@ html {
 .add-btn {
   font-size: 18px;
   margin-left: 20px;
-  border: none;
   background-color: green;
   color: white;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.disabled-add-btn {
+  font-size: 18px;
+  margin-left: 20px;
+  background-color: rgb(167, 243, 167);
+  color: white;
+  cursor: default;
   padding: 5px 15px;
   border-radius: 10px;
 }

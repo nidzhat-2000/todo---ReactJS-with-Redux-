@@ -1,10 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { logIn, logOut } from '../redux/slices/userSlc';
+import { logIn } from '../redux/slices/userSlc';
 
 function Header() {
   const { user } = useSelector(state => state.userSlc);
-  // console.log(user);
   const dispatch = useDispatch();
 
   return (
