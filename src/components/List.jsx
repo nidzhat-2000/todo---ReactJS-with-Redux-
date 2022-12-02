@@ -7,7 +7,7 @@ function List() {
   const { items } = useSelector(state => state.addingItem);
   const { user } = useSelector(state => state.userSlc);
   const dispatch = useDispatch();
-  console.log(items);
+  // console.log(items);
 
   return (
     <div className="items-list">

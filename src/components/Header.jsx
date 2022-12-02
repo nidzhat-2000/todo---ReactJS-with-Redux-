@@ -6,6 +6,8 @@ function Header() {
   const { user } = useSelector(state => state.userSlc);
   const dispatch = useDispatch();
 
+  console.log(user);
+
   return (
     <div className="navbar">
       <nav>

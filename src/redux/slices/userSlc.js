@@ -10,8 +10,8 @@ export const userSlc = createSlice({
   initialState,
   reducers: {
     logIn: (state, action) => {
+      localStorage.setItem('users', action.payload);
       state.user = action.payload;
-      // localStorage.setItem('user', action.payload);
     },
     logOut: state => {
       state.user = false;

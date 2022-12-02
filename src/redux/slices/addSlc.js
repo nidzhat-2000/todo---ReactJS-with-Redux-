@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   items: [],
 };
+// localStorage.getItem('items') ??
 
 export const addSlc = createSlice({
   name: 'add',
@@ -10,7 +11,7 @@ export const addSlc = createSlice({
   reducers: {
     addItem: (state, action) => {
       state.items = [action.payload, ...state.items];
-      localStorage.setItem('items', action.payload);
+      localStorage.setItem('items', JSON.stringify(state.items));
     },
     deleteItem: (state, action) => {
       state.items = state.items.filter(item => item.id !== action.payload);
