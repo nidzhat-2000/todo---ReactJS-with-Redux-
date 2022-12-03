@@ -40,7 +40,7 @@ button {
 }
 
 .form-comps {
-  width: 300px;
+  width: 390px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,7 +64,8 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 340px;
+  width: 365px;
+  /* margin-top: 10px; */
 }
 
 .icons {
@@ -76,10 +77,14 @@ button {
 .icon {
   border: none;
   font-size: 20px;
-  margin-right: 5px;
+  margin-right: 10px;
   color: white;
-  padding: 5px 10px;
+  padding: 10px 12px;
   background-color: rgb(8, 54, 54);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal {
@@ -103,7 +108,7 @@ button {
   text-decoration: line-through;
 }
 
-nav {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -113,7 +118,7 @@ nav {
   max-width: 800px;
   margin: auto;
   font-size: 20px;
-  background-color: rgb(243, 222, 222);
+  background: rgb(243, 222, 222);
   padding: 20px 30px;
   border-radius: 15px;
   display: block;
@@ -126,8 +131,8 @@ html {
 
 .add-item {
   border: none;
-  width: 100%;
-  height: 30px;
+  width: 80%;
+  height: 40px;
   border-radius: 10px;
   font-size: 18px;
   padding-left: 20px;
@@ -150,4 +155,16 @@ html {
   cursor: default;
   padding: 5px 15px;
   border-radius: 10px;
+}
+
+.items-list {
+  margin-top: 20px;
+}
+
+.user-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20px;
+  margin-top: 25px;
 }

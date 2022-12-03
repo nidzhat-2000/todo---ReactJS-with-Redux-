@@ -1,16 +1,17 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { logIn } from '../redux/slices/userSlc';
+import { logOut } from '../redux/slices/userSlc';
 
 function Header() {
   const { user } = useSelector(state => state.userSlc);
   const dispatch = useDispatch();
 
-  console.log(user);
+  // console.log(user);
 
   return (
-    <div className="navbar">
-      <nav>
+    <nav>
+      <div className="navbar">
         <div className="app name">
           <h2>Todo-List</h2>
         </div>
@@ -29,9 +30,23 @@ function Header() {
             Log In as Ibrahim
           </button>
         </section>
-      </nav>
-      {user && <h3>Welcome, {user.name}</h3>}
-    </div>
+      </div>
+
+      <section className='user-bar'>
+        {user && <h3>Welcome, {user.name}</h3>}
+
+        <div>
+          <button
+            disabled={!user}
+            className={!user ? 'hide' : 'logout-btn'}
+            onClick={() => dispatch(logOut())}
+            // className="logout"
+          >
+            Log out
+          </button>
+        </div>
+      </section>
+    </nav>
   );
 }
 

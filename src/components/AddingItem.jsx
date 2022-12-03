@@ -35,10 +35,7 @@ function AddingItem() {
           ref={focus}
           placeholder="Type here..."
           type="text"
-          onChange={e => {
-            console.log(e.target.value);
-            setTodo(e.target.value);
-          }}
+          onChange={e => setTodo(e.target.value)}
         />
         <button
           disabled={!user}

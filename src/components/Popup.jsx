@@ -11,12 +11,14 @@ function Popup() {
     dispatch(closeModal());
   };
 
+  // console.log(data);
+
   return (
-    <div className="modal">
+    <section className="modal">
       <div className="modal-inner">
         <EditItem closePopup={closePopup} data={data} />
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -8,8 +8,6 @@ function EditItem({ closePopup, data }) {
   const [title, setTitle] = useState(data.title);
   const [done, setDone] = useState(data.done);
 
-  console.log(data);
-
   const submitItem = e => {
     e.preventDefault();
 
@@ -24,30 +22,27 @@ function EditItem({ closePopup, data }) {
   };
 
   return (
-    <div>
+    <form onSubmit={submitItem}>
       {/* <p>{JSON.stringify(data, null, 2)}</p> */}
-
-      <form onSubmit={submitItem}>
+      <input
+        type="text"
+        value={title}
+        onChange={e => setTitle(e.target.value)}
+      />
+      <br />
+      <label className={done ? 'checked' : ''}>
         <input
-          type="text"
-          value={title}
-          onChange={e => setTitle(e.target.value)}
+          type="checkbox"
+          checked={done}
+          onChange={e => setDone(e.target.checked)}
         />
-        <br />
-        <label htmlFor="" className={done ? 'checked' : ''}>
-          <input
-            type="checkbox"
-            checked={done}
-            onChange={e => setDone(e.target.checked)}
-          />
-          Done
-        </label>
-        <br />
-        <button type="submit">💹 Edit</button>
-        <br />
-        <button onClick={closePopup}>Close Modal</button>
-      </form>
-    </div>
+        Done
+      </label>
+      <br />
+      <button type="submit">💹 Edit</button>
+      <br />
+      <button onClick={closePopup}>Close Modal</button>
+    </form>
   );
 }
 
